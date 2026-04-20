@@ -3,10 +3,10 @@ import json
 import os
 
 r = redis.Redis(
-    host=os.getenv("https://kind-pup-81297.upstash.io", "localhost"),
+    host=os.getenv("kind-pup-81297.upstash.io", "localhost"),
     port=6379,
     password=os.getenv("gQAAAAAAAT2RAAIncDE3NThmZGJhYjVlNDY0MWNmOTdkZTM5YWZkNmVhZjM0MnAxODEyOTc", None),
-    ssl=True if os.getenv("https://kind-pup-81297.upstash.io") else False,
+    ssl=True if os.getenv("kind-pup-81297.upstash.io") else False,
     decode_responses=True
 )
 
