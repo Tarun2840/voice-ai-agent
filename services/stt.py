@@ -1,3 +1,3 @@
 def speech_to_text(audio_bytes):
-    # Mock STT
+    # Replace with real Whisper later
     return "book appointment tomorrow"
