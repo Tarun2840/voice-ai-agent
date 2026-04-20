@@ -6,13 +6,17 @@ def process_input(text: str):
     lang = detect_language(text)
     session = get_session("demo_user")
 
+    # Simple intent detection
     if "book" in text.lower():
         slots = check_availability("cardiologist", "tomorrow")
-        set_session("demo_user", {"intent": "booking"})
+        set_session("demo_user", {
+            "intent": "booking",
+            "doctor": "cardiologist"
+        })
         return f"Available slots are {slots}"
-
+    
     if "10" in text:
         result = book_appointment("demo_user", "cardiologist", "10:00 AM")
         return "Appointment booked successfully"
-
+    
     return "Sorry, I didn't understand"
